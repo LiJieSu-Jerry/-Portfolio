@@ -24,11 +24,17 @@ void battleStart(Hero &myHero,Hero &enemy){
     myHero.print_skillList();
     while(myHero.isHpZero()==false&&enemy.isHpZero()==false){
         if (myTurn==true){
+            std::cout<<"Your hero still has "<<myHero.get_hp()<<" HP"<<std::endl;
             action(myHero,enemy);
             myTurn=false;
         }
         else{
             std::cout<<"Enemy still has "<<enemy.get_hp()<<" HP"<<std::endl;
+            Skill s=enemy.get_skillvector()[0];
+            std::cout<<"Enemy use "<<s.get_skillName()<<std::endl;
+            enemy.use_skill(s);
+            int damage=s.damageCal(enemy);
+            myHero.injured(damage);
             myTurn=true;
         }
     }
