@@ -20,7 +20,11 @@ def cursorConnection():
 #cursor.execute("INSERT INTO Classmates (NAME,AGE,GENDER)VALUES('Jesscia',50,'FEMALE')") #insert data
 #print("Insert successfully")
 cursor,connection=cursorConnection()
+
 cursor.execute("SELECT * FROM Classmates WHERE AGE >= 20") #search data
+
+sql="SELECT * FROM Classmates WHERE NAME='%s'"%("JACK")
+cursor.execute(sql)
 arr=cursor.fetchall()
 
 for i in arr:
