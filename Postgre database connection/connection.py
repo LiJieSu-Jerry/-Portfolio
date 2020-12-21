@@ -27,6 +27,11 @@ sql="SELECT * FROM Classmates WHERE NAME='%s'"%("JACK")
 cursor.execute(sql)
 arr=cursor.fetchall()
 
+sql="UPDATE Classmates SET NAME='Jack' WHERE NAME= 'JACK'"
+cursor.execute(sql)
+sql="SELECT * FROM Classmates WHERE NAME='%s'"%("Jack")
+cursor.execute(sql)
+arr=cursor.fetchall()
 for i in arr:
 	print(i[0],i[1],i[2])
 
