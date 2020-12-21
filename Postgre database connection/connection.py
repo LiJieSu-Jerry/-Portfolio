@@ -12,10 +12,6 @@ def cursorConnection():
 	cursor=connection.cursor()
 	print("Connect successfully")
 	return cursor,connection
-def searchByName(cursor,name):
-	sql="SELECT * FROM Classmates WHERE name==%s" % (name)
-	cursor.execute()
-
 #cursor.execute('''CREATE TABLE Classmates(NAME TEXT PRIMARY KEY NOT NULL, #Create table with one primary key for searching
 #										  AGE INT NOT NULL,
 #										  GENDER TEXT NOT NULL)''')
@@ -29,7 +25,7 @@ arr=cursor.fetchall()
 
 for i in arr:
 	print(i[0],i[1],i[2])
-search_byName
+
 
 connection.commit()
 cursor.close()
