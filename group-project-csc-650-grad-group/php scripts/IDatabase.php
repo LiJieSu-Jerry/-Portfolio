@@ -10,10 +10,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 <?php
 class IDatabase{
-        private static $servername = "localhost";
-        private static $username = "phpUser";
-        private static $password = "0000";
-        private static $dbname="qss5000x";
+        private static $servername = "";
+        private static $username = "";
+        private static $password = "";
+        private static $dbname="";
 
         function connectDB(){
                 $servername=self::$servername;
