@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/nativize.css">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/about.css">
+  <link rel="stylesheet" href="assets/css/nav.css">
+  <link rel="stylesheet" href="assets/css/section.css">
+  <link rel="stylesheet" href="assets/css/demo.css">
+  <link rel="stylesheet" href="assets/css/github.css">
+  <!--<link rel="stylesheet" href="assets/css/bootstrap-4.3.1-dist/css/bootstrap.css">-->
+
+  <link rel="import" href="menus/menus.html">
+  <link rel="import" href="menus/modify.html">
+  <link rel="import" href="menus/config.html">
+  <link rel="import" href="about.html">
+
+  </script>
+</head>
+<body>
+
+  <nav class="nav js-nav">
+    <header class="nav-header">
+      <h1 class="nav-title">Design & Build Lab</h1>
+      <h1 class="nav-title"><strong>Administrative Dashboard</strong></h1>
+      <!--<svg class="nav-header-icon"></svg>
+      <img src="assets/img/dabl_image.png" height="55" width="55" style="float:center">-->
+    </header>
+
+    <div class="nav-item u-category-menu">
+      <h5 class="nav-category">
+        <svg class="nav-icon"><use xlink:href="assets/img/icons.svg#icon-menu"></use></svg>
+        Menu
+      </h5>
+      <button type="button" id="button-menus" data-section="menus" class="nav-button">Add <em>New User</em> </button>
+      <button type="button" id="button-modify" data-section="modify" class="nav-button">Modify <em>Existing User</em></button>
+    </div>
+
+    <div class="nav-item u-category-communication">
+      <h5 class="nav-category">
+        <svg class="nav-icon"><use xlink:href="assets/img/icons.svg#icon-system"></use></svg>
+        Configuration
+      </h5>
+      <button type="button" id="button-config" data-section="config" class="nav-button"><em>Information</em></button>
+    </div>
+
+
+    <footer class="nav-footer">
+      <button type="button" id="button-about" data-modal="about" class="nav-footer-button">About</button>
+      <a class="nav-footer-logo" href="http://github.com" aria-label="Homepage">
+        <svg class="nav-footer-icon"><use xlink:href="assets/img/icons.svg#icon-love"></use></svg>
+      </a>
+    </footer>
+
+  </nav>
+
+  <main class="content js-content"></main>
+
+  <script>
+    require('./assets/imports')
+    require('./assets/ex-links')
+    require('./assets/nav')
+    require('./assets/demo-btns')
+    require('./assets/code-blocks')
+    require('./assets/normalize-shortcuts')
+  </script>
+</body>
+</html>

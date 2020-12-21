@@ -1,0 +1,81 @@
+<template class="task-template">
+  <section id="modify-section" class="section js-section u-category-menu">
+    <header class="section-header">
+      <div class="section-wrapper">
+        <h1>
+          <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-menu"></use></svg>
+          Modify <em></em>Existing User
+        </h1>
+        <h3>This form allows the administrator to modify an existing user in the DaBL database.</h3>
+        <p>This application populates a local and cloud-based database.</p>
+      </div>
+    </header>
+
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="application-menu-demo-toggle" class="js-container-target demo-toggle-button">Modify an Existing User
+        </button>
+        <div class="demo-box">
+          <p>Please fill out the form below. Users are identified by their email address. This form allows you to modify email addresses as well. Once complete, select <code>Submit</code> to populate DaBL databases.</p>
+            <div class="demo-protip">
+            <strong>Email address for verification:</strong>
+            <input type="text" class="form-control" id="email-verify">
+            </div>
+            <div class="form-group">
+              <label for="usr">Name:</label>
+              <input type="text" class="form-control" id="name-modify">
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address:</label>
+              <input type="AUID" class="form-control" id="email-modify">
+            </div>
+            <div class="form-group">
+              <label for="pwd">AU Identification Number:</label>
+              <input type="AUID" class="form-control" id="auid-modify">
+            </div>
+            <div class="form-group">
+              <label for="pwd">Member Type:</label>
+              <input type="text" class="form-control" id="membertype-modify">
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" id="agreement-modify" value="">User has signed the DaBL Agreement</label>
+            </div>
+          <div class="demo-protip">
+            <!-- waiver / series1pro / thr3dprinter / jaguarvlx / bantamtools / pls475 / sewing / test -->
+            <strong>Check all training the user is certified on:</strong>
+            <div class="checkbox">
+              <label><input type="checkbox" id="series1pro-modify" value="">Series 1 Pro</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" id="thr3dprinter-modify" value="">3D Printer [thr3dprinter]</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" id="jaguarvlx-modify" value="">Jaguar VLX</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" id="bantamtools-modify" value="">Bantam Tools</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" id="pls475-modify" value="">PLS 4.75 Laser Cutter </label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" id="sewing-modify" value="">Machine Sewing</label>
+            </div>
+            <!-- -->
+          </div>
+          <div>
+            <button type="button" id="submit-modify" class="btn btn-primary btn-block">Submit</button>
+            <span class="response" id="error-reply-modify"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      // this is where I can save user input & push
+      require('./renderer-process/modify')
+    </script>
+
+
+  </section>
+</template>

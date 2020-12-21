@@ -1,0 +1,83 @@
+<template class="task-template">
+  <section id="menus-section" class="section js-section u-category-menu">
+    <header class="section-header">
+      <div class="section-wrapper">
+        <h1>
+          <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-menu"></use></svg>
+          Add New User
+        </h1>
+        <h3>This form allows the administrator to enter a new user to the DaBL database.</h3>
+        <p>This application populates a local and cloud-based database.</p>
+      </div>
+    </header>
+
+    <!-- name / UID / UIDprev / membertype / email / membersince / lastaccess / waiver / series1pro / thr3dprinter / jaguarvlx / bantamtools / pls475 / sewing / test -->
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="application-menu-demo-toggle" class="js-container-target demo-toggle-button">Create a New User
+        </button>
+        <div class="demo-box">
+          <p>Please fill out the form below. Once complete, select <code>Submit</code> to populate DaBL databases.</p>
+            <div class="form-group">
+              <label for="usr">Name:</label>
+              <input type="text" class="form-control" id="name-createnew">
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address:</label>
+              <input type="text" class="form-control" id="email-createnew">
+            </div>
+            <div class="form-group">
+              <label for="pwd">AU Identification Number:</label>
+              <input type="text" class="form-control" id="auid-createnew">
+            </div>
+            <div class="form-group">
+              <label for="pwd">Member Type:</label>
+              <input type="text" class="form-control" id="membertype-createnew">
+            </div>
+            <!-- ---------------------- CHECKBOXES ---------------------- -->
+            <div class="checkbox">
+              <label><input type="checkbox" id="agreement-createnew" value="">User has signed the DaBL Agreement</label>
+            </div>
+          <div class="demo-protip">
+            <!-- waiver / series1pro / thr3dprinter / jaguarvlx / bantamtools / pls475 / sewing / test -->
+            <strong>Check all training the user is certified on:</strong>
+            <div class="checkbox">
+              <label><input type="checkbox" id="series1pro-createnew" value="">Series 1 Pro</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" id="thr3dprinter-createnew" value="">3D Printer [thr3dprinter]</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" id="jaguarvlx-createnew" value="">Jaguar VLX</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" id="bantamtools-createnew" value="">Bantam Tools</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" id="pls475-createnew" value="">PLS 4.75 Laser Cutter </label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" id="sewing-createnew" value="">Machine Sewing</label>
+            </div>
+            <!--
+            <div class="checkbox">
+              <label><input type="checkbox" id="electronic_ws-createnew" value="">Machine Sewing</label>
+            </div>
+            -->
+            <!-- -->
+          </div>
+          <div>
+            <button type="button" id="submit-createnew" class="btn btn-primary btn-block">Submit</button>
+            <span class="response" id="error-reply"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      // this is where I can save user input & push
+      require('./renderer-process/context-menu')
+    </script>
+
+  </section>
+</template>

@@ -1,0 +1,111 @@
+<template class="task-template">
+  <section id="config-section" class="section js-section u-category-communication">
+    <header class="communication">
+      <div class="section-wrapper">
+        <h1>
+          <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-system"></use></svg>
+          System Configuration
+        </h1>
+        <h3>There are two databases that the application will send data and commands to.</h3>
+
+        <p>
+          There are two databases that DaBL uses. These include a local and cloud-based database.
+          This provides for the protection AU student information against out-of-network cloud storage, while allowing students to use interactive DaBL website features.
+          Input the file path to the configuration files below. At this time, only MYSQL databases are supported.
+        </p>
+      </div>
+    </header>
+
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="async-msg-demo-toggle" class="js-container-target demo-toggle-button">Local Database
+          <div class="demo-meta u-avoid-clicks">Supports: MySQL</div>
+        </button>
+        <div class="demo-box">
+          <p>The local database is compiled and located, hard-coded in the main.js file. Please update to be more <code>elegant</code>.</p>
+            <!--
+            <p>Please choose a file. Then, <code>Submit</code> to read in the configuration.</p>
+            <div class="form-group">
+              <label for="usr">File Path:</label>
+              <input type="text" class="form-control" id="file-localdb">
+            </div>
+
+            <div class="form-group">
+              <form>
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="customFile_1">
+                  <label class="custom-file-label" for="customFile_1">Choose file</label>
+                </div>
+              </form>
+            </div>
+            <div>
+              <button type="button" id="submit-localdb" class="btn btn-primary btn-block">Submit</button>
+            </div>
+            -->
+      </div>
+    </div>
+    </div>
+
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="sync-msg-demo-toggle" class="js-container-target demo-toggle-button">Remote Database
+          <div class="demo-meta u-avoid-clicks">Supports: MySQL</div>
+        </button>
+        <div class="demo-box">
+          <p>The AWS database is compiled and located, hard-coded in the main.js file. Please update to be more <code>elegant</code>.</p>
+          <!--
+          <p>Please choose a file. Then, <code>Submit</code> to read in the configuration.</p>
+
+            <div class="form-group">
+              <form>
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="customFile_2">
+                  <label class="custom-file-label" for="customFile_2">Choose file</label>
+                </div>
+              </form>
+            </div>
+
+            <div>
+              <button type="button" id="submit-remotedb" class="btn btn-primary btn-block">Submit</button>
+            </div>
+            -->
+      </div>
+    </div>
+  </div>
+
+      <div class="demo">
+        <div class="demo-wrapper">
+          <button id="async-msg-demo-toggle" class="js-container-target demo-toggle-button">License
+            <div class="demo-meta u-avoid-clicks">MIT License</div>
+          </button>
+          <div class="demo-box">
+            <footer class="licesnse-section footer">
+              <p><small>Copyright 2019 American University Computer Science Department</small></p>
+              <p><small>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish,
+                distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</small></p>
+              <p><small>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</small></p>
+              <p><small>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+                CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</small></p>
+            </footer>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <script>
+    // Add the following code to place the name of the file
+    /*
+    $(".custom-file-input").on("change", function() {
+      var fileName = $(this).val().split("\\").pop();
+      $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+    });
+    */
+    </script>
+    <script type="text/javascript">
+      //require('./renderer-process/communication/sync-msg')
+      require('./renderer-process/config')
+      //require('./renderer-process/communication/invisible-msg')
+    </script>
+
+  </section>
+</template>

@@ -1,0 +1,21 @@
+{
+  "name": "DaBL-App",
+  "version": "1.0.0",
+  "description": "DaBL Administrative Application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "DaBL",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^7.1.1"
+  },
+  "dependencies": {
+    "config": "^3.2.4",
+    "electron-settings": "^3.2.0",
+    "glob": "^7.1.6",
+    "moment": "^2.24.0",
+    "mysql": "^2.17.1"
+  }
+}

@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>widget</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+
+
+
+    <div class="absolute " style =" margin-left:450px ;margin-top:150px">
+        <iframe id = "laserCal" src="https://calendar.google.com/calendar/embed?src=7mvpfg6rdbc2arhpqfucr2e08k%40group.calendar.google.com&ctz=America%2FNew_York" style="display: none"></iframe>
+        <iframe id = "vinylCal" src="https://calendar.google.com/calendar/embed?src=qa83jtejin79alh5j29euoicd0%40group.calendar.google.com&ctz=America%2FNew_York" style="display: none"></iframe>
+        <iframe id = "millCal"  src="https://calendar.google.com/calendar/embed?src=oabegp6r4ser2402nuoavij6f8%40group.calendar.google.com&ctz=America%2FNew_York" style="display: none"></iframe>
+        <iframe id = "electricCal" src="https://calendar.google.com/calendar/embed?src=atek4qnqophi3fenco44m19v7o%40group.calendar.google.com&ctz=America%2FNew_York" style="display: none"></iframe>
+        <iframe id = "blueCal" src="https://calendar.google.com/calendar/embed?src=3c6tjk3t2fdam50m3e5c2lhveg%40group.calendar.google.com&ctz=America%2FNew_York" style="display: none"></iframe>
+        <iframe id = "greenCal" src="https://calendar.google.com/calendar/embed?src=jtucjb65m73gvns2t6oiu5g9n0%40group.calendar.google.com&ctz=America%2FNew_York" style="display: none"></iframe>
+        <iframe id = "whiteCal" src="https://calendar.google.com/calendar/embed?src=dt7fkbof6kam1phljd6akum3oo%40group.calendar.google.com&ctz=America%2FNew_York" style="display: none"></iframe>
+        <iframe id = "yellowCal" src="https://calendar.google.com/calendar/embed?src=io11q6ctocms2oero7ibt82nbg%40group.calendar.google.com&ctz=America%2FNew_York" style="display: none"></iframe>
+        <iframe id = "magentaCal" src="https://calendar.google.com/calendar/embed?src=nclci4qg5igpspkj871omstd24%40group.calendar.google.com&ctz=America%2FNew_York" style="display: none" ></iframe>
+        <iframe id = "sewingCal" src="https://calendar.google.com/calendar/embed?src=doib9m4ms8fcbbvlsr7i1t4le8%40group.calendar.google.com&ctz=America%2FNew_York" style="display: none"></iframe>
+    </div>
+
+
+
+
+
+    <style>
+        div.absolute {
+            position: absolute;
+            top: 0px;
+
+            left: 0;
+
+
+        }
+
+        .login-clean form {
+            background-color: #ffffff;
+            border-radius: 4px;
+            color: #505e6c;
+            box-shadow: 100px 100px 500px rgba(0,0,0,.2);
+        }
+
+
+
+        .login-clean form .form-control {
+            /* background for text input fields*/
+            background: #f7f9fc;
+            border: none;
+            border-bottom: 1px solid #dfe7f1;
+            border-radius: 0;
+            box-shadow: none;
+            outline: none;
+            color: inherit;
+            text-indent: 8px;
+            height: 42px;
+        }
+
+        .login-clean form .btn-primary {
+            background: #636ef4;
+            border: none;
+            border-radius: 4px;
+            padding: 11px;
+            box-shadow: none;
+            margin-top: 26px;
+            text-shadow: none;
+            outline: none !important;
+        }
+
+        .login-clean form .btn-primary:hover, .login-clean form .btn-primary:active {
+            background: #eb3b60;
+        }
+
+        .login-clean form .btn-primary:active {
+            transform: translateY(1px);
+        }
+
+
+        .login-clean form .forgot:hover, .login-clean form .forgot:active {
+            opacity: 1;
+            text-decoration: none;
+        }
+
+
+
+    </style>
+
+
+
+    <!-- Start: Login Form Clean -->
+    <div class="login-clean">
+        <form class="absolute">
+
+            <form method="post" style="width: 900px;height: 600px;">
+                <h2 class="sr-only">Login Form</h2>
+
+
+
+
+                <!--        1pm to 8pm  -->
+                <div class="form-group"><input class="form-control" id = "email" type="email" name="email" placeholder="Email" pattern=".+.american.edu" size="10" required></div>
+                <input class="form-control" id = "date" type="date">
+                <label>Select a time:</label>
+                <div class="btn-group" role="group"></div>
+                <!--    TIME FIELD ELEMENTS    -->
+                <div class="form-group">
+                    <input class="form-control form-control-sm d-inline" data-toggle="tooltip" data-bs-tooltip="" type="time" id = "startTime" name="usr_time" min = "09:00" max="17:00" style="width: 200px;" title="from:" required>
+                    <label>-</label>
+                    <input class="form-control d-inline" type="time" id = "endTime" name="usr_time" min = "13:00" max="20:00" style="width: 200px;">
+                </div>
+
+                <!--    MACHINES    -->
+                <div class="form-group"><label>Select a machine:</label>
+                    <form name = "machines">
+                        <div for="formCheck-2"><a class="form-check" data-toggle="collapse" aria-expanded="false" aria-controls="collapse-1" href="#collapse-1" role="button">3D Printers</a>
+                            <div class="collapse" id="collapse-1">
+                                <p>
+
+                                    <input type="radio" name="machine" id="Yellow 3D Printer" value="yYellow 3D Printer" onclick="showYellowCal()" style="vertical-align: middle; margin: 10px;"> Yellow 3D Printer <br>
+                                    <input type="radio" name="machine" id="White 3D Printer" value="White 3D Printer" onclick="showWhiteCal()" style="vertical-align: middle; margin: 10px;"> white 3D Printer <br>
+                                    <input type="radio" name="machine" id="Magenta 3D Printer" value="Magenta 3D Printer" onclick="showMagentaCal()" style="vertical-align: middle; margin: 10px;"> Magenta 3D Printer <br>
+                                    <input type="radio" name="machine" id="Blue 3D Printer" value="Blue 3D Printer" onclick="showBlueCal()" style="vertical-align: middle; margin: 10px;"> Blue 3D Printer <br>
+                                    <input type="radio" name="machine" id="Green 3D Printer" value="Green 3D Printer" onclick="showGreenCal()" style="vertical-align: middle; margin: 10px;"> Green 3D Printer <br>
+
+                                </p>
+                            </div>
+                        </div>
+                        <input type="radio" name= "machine" id = "Sewing Machine" value="Sewing Machine" onclick="showSewingCal()"> Sewing Machine <br>
+                        <input type="radio" name= "machine" id = "Laser Cutter" value="Laser Cutter" onclick="showLaserCal()"> Laser Cutter <br>
+                        <input type="radio" name="machine" id = "Vinyl Cutter" value="Vinyl Cutter" onclick="showVinylCal()"> Vinyl Cutter <br>
+                        <input type="radio" name="machine" id = "Desktop Mill" value="Desktop Mill" onclick="showMillCal()"> Desktop Mill <br>
+                        <input type="radio" name="machine" id = "Electronics Workstation" value="Electronics Workstation" onclick="showElectricCal()">  Electronics Workstation <br>
+                    </form>
+                </div>
+
+
+                <div id="submit">
+
+                    <input type="submit" onclick="requestPHP(getString(getEmail(),getStartDateTime(),getEndDateTime(),getMachine()))">
+                </div>
+
+                <div id="txtHint"></div>
+
+
+
+            </form>
+        </form>
+
+    </div>
+</head>
+
+<body>
+
+
+
+<script>
+
+    var calW = 450;
+    var calH = 400;
+
+
+    var laserCal = document.getElementById('laserCal');
+    var vinylCal = document.getElementById('vinylCal');
+    var millCal = document.getElementById('millCal');
+    var electricCal = document.getElementById('electricCal');
+
+    var magentaCal = document.getElementById('magentaCal');
+    var whiteCal = document.getElementById('whiteCal');
+    var blueCal = document.getElementById('blueCal');
+    var greenCal = document.getElementById('greenCal');
+    var yellowCal = document.getElementById('yellowCal');
+    var sewingCal = document.getElementById('sewingCal');
+
+    let machine;
+    let date;
+    let startTime;
+    let endTime;
+    let startDateTime;
+    let endDateTime;
+    let email;
+    function getDate() {
+        date = document.getElementById('date').value;
+        return date;
+    }
+    function getStartTime() {
+        startTime = document.getElementById('startTime').value;
+        return startTime;
+    }
+    function getEndTime() {
+        endTime = document.getElementById('endTime').value;
+        return endTime;
+    }
+    function getStartDateTime() {
+        startDateTime = getDate() + "T" + getStartTime() + ":00";
+        return startDateTime;
+    }
+    function getEndDateTime() {
+        endDateTime = getDate() + "T" + getEndTime() + ":00";
+        return endDateTime;
+    }
+    // Gets machine selected from radio button
+    function getMachine() {
+        // looping through radio buttons and finding checked button
+        for (var i = 0; i < document.machines.machine.length; i++) {
+            if (document.machines.machine[i].checked) {
+                machine = document.machines.machine[i].value
+            }
+        }
+        console.log(machine);
+        return machine;
+    }
+    function getEmail() {
+        email = document.getElementById('email').value;
+        return email;
+    }
+
+    function showLaserCal() {
+
+        millCal.style.display = 'none';
+        vinylCal.style.display = 'none';
+
+        blueCal.style.display = 'none';
+        whiteCal.style.display = 'none';
+        greenCal.style.display = 'none';
+        yellowCal.style.display = 'none';
+        magentaCal.style.display = 'none';
+        electricCal.display = 'none';
+        sewingCal.style.display = 'none';
+
+        laserCal.style.display = 'block';
+
+        laserCal.width = calW;
+        laserCal.height = calH;
+        laserCal.style.border = "0";
+        laserCal.frameBorder = "0";
+    }
+
+    function showVinylCal() {
+
+        laserCal.style.display = 'none';
+        millCal.style.display = 'none';
+        electricCal.display = 'none';
+
+        blueCal.style.display = 'none';
+        whiteCal.style.display = 'none';
+        greenCal.style.display = 'none';
+        yellowCal.style.display = 'none';
+        magentaCal.style.display = 'none';
+        sewingCal.style.display = 'none';
+
+        vinylCal.style.display = 'block';
+        vinylCal.width = calW;
+        vinylCal.height = calH;
+        vinylCal.style.border = "0";
+        vinylCal.frameBorder = "0";
+    }
+    function showMillCal() {
+
+        laserCal.style.display = 'none';
+        vinylCal.style.display = 'none';
+        electricCal.display = 'none';
+
+        blueCal.style.display = 'none';
+        whiteCal.style.display = 'none';
+        greenCal.style.display = 'none';
+        yellowCal.style.display = 'none';
+        magentaCal.style.display = 'none';
+        sewingCal.style.display = 'none';
+
+        millCal.style.display = 'block';
+        millCal.width = calW;
+        millCal.height = calH;
+        millCal.style.border = "0";
+        millCal.frameBorder = "0";
+    }
+    function showElectricCal() {
+
+        millCal.style.display = 'none';
+        vinylCal.style.display = 'none';
+        laserCal.style.display = 'none';
+
+        blueCal.style.display = 'none';
+        whiteCal.style.display = 'none';
+        greenCal.style.display = 'none';
+        yellowCal.style.display = 'none';
+        magentaCal.style.display = 'none';
+        sewingCal.style.display = 'none';
+
+        electricCal.style.display = 'block';
+        electricCal.width = calW;
+        electricCal.height = calH;
+        electricCal.style.border = "0";
+        electricCal.frameBorder = "0";
+    }
+
+    function showYellowCal() {
+
+        millCal.style.display = 'none';
+        vinylCal.style.display = 'none';
+        laserCal.style.display = 'none';
+        electricCal.style.display = 'none';
+        blueCal.style.display = 'none';
+        whiteCal.style.display = 'none';
+        greenCal.style.display = 'none';
+        magentaCal.style.display = 'none';
+        sewingCal.style.display = 'none';
+
+        yellowCal.style.display = 'block';
+        yellowCal.width = calW;
+        yellowCal.height = calH;
+        yellowCal.style.border = "0";
+        yellowCal.frameBorder = "0";
+    }
+
+    function showGreenCal() {
+
+        millCal.style.display = 'none';
+        vinylCal.style.display = 'none';
+        laserCal.style.display = 'none';
+        electricCal.style.display = 'none';
+        blueCal.style.display = 'none';
+        whiteCal.style.display = 'none';
+        yellowCal.style.display = 'none';
+        blueCal.style.display = 'none';
+        whiteCal.style.display = 'none';
+        greenCal.style.display = 'none';
+        yellowCal.style.display = 'none';
+        magentaCal.style.display = 'none';
+        sewingCal.style.display = 'none';
+
+
+        greenCal.style.display = 'block';
+        greenCal.width = calW;
+        greenCal.height = calH;
+        greenCal.style.border = "0";
+        greenCal.frameBorder = "0";
+    }
+
+    function showMagentaCal() {
+
+        millCal.style.display = 'none';
+        vinylCal.style.display = 'none';
+        laserCal.style.display = 'none';
+        electricCal.style.display = 'none';
+        blueCal.style.display = 'none';
+        whiteCal.style.display = 'none';
+        greenCal.style.display = 'none';
+        yellowCal.style.display = 'none';
+        sewingCal.style.display = 'none';
+
+
+
+        magentaCal.style.display = 'block';
+        magentaCal.width = calW;
+        magentaCal.height = calH;
+        magentaCal.style.border = "0";
+        magentaCal.frameBorder = "0";
+    }
+
+    function showBlueCal() {
+
+        millCal.style.display = 'none';
+        vinylCal.style.display = 'none';
+        laserCal.style.display = 'none';
+        electricCal.style.display = 'none';
+        magentaCal.style.display = 'none';
+        whiteCal.style.display = 'none';
+        greenCal.style.display = 'none';
+        yellowCal.style.display = 'none';
+        sewingCal.style.display = 'none';
+
+        blueCal.style.display = 'block';
+        blueCal.width = calW;
+        blueCal.height = calH;
+        blueCal.style.border = "0";
+        blueCal.frameBorder = "0";
+    }
+
+
+
+    function showWhiteCal() {
+
+        millCal.style.display = 'none';
+        vinylCal.style.display = 'none';
+        laserCal.style.display = 'none';
+        electricCal.style.display = 'none';
+        magentaCal.style.display = 'none';
+        whiteCal.style.display = 'none';
+        greenCal.style.display = 'none';
+        blueCal.style.display = 'none';
+        yellowCal.style.display = 'none';
+        sewingCal.style.display = 'none';
+        whiteCal.style.display = 'block';
+        whiteCal.width = calW;
+        whiteCal.height = calH;
+        whiteCal.style.border = "0";
+        whiteCal.frameBorder = "0";
+    }
+    function showSewingCal() {
+
+        millCal.style.display = 'none';
+        vinylCal.style.display = 'none';
+        laserCal.style.display = 'none';
+        electricCal.style.display = 'none';
+        magentaCal.style.display = 'none';
+        whiteCal.style.display = 'none';
+        greenCal.style.display = 'none';
+        blueCal.style.display = 'none';
+        yellowCal.style.display = 'none';
+        whiteCal.style.display = 'none';
+        sewingCal.style.display = 'block';
+        sewingCal.width = calW;
+        sewingCal.height = calH;
+        sewingCal.style.border = "0";
+        sewingCal.frameBorder = "0";
+    }
+
+
+
+
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+<!--Copyright 2019 American University Department of Computer Science
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.-->
+</html>
